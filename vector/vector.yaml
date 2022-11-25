@@ -1,0 +1,77 @@
+# https://github.com/vectordotdev/helm-charts/blob/develop/charts/vector/values.yaml
+role: Aggregator
+
+terminationGracePeriodSeconds: 3
+
+customConfig:
+  data_dir: /vector-data-dir
+  api:
+    enabled: true
+    address: 127.0.0.1:8686
+    playground: false
+  sources:
+    internal_metrics:
+      type: internal_metrics
+    vector:
+      address: 0.0.0.0:6000
+      type: vector
+      version: "2"
+
+  transforms:
+    other_events:
+      type: filter
+      inputs:
+        - vector
+      condition:
+        type: "vrl"
+        source: |-
+          !exists(.sport)
+
+    network_events:
+      type: filter
+      inputs:
+        - vector
+      condition:
+        type: "vrl"
+        source: |-
+          exists(.sport)
+
+    network_events_metrics:
+      type: log_to_metric
+      inputs:
+        - network_events
+      metrics:
+        - type: counter
+          field: bytes
+          name: network_flows
+          increment_by_value: true
+          tags:
+            saddr: '{{ "{{ saddr }}" }}'
+            daddr: '{{ "{{ daddr }}" }}'
+#            sport: '{{ "{{ sport }}" }}'
+#            dport: '{{ "{{ dport }}" }}'
+            pod_name: '{{ "{{ pod_name }}" }}'
+            pod_namespace: '{{ "{{ pod_namespace }}" }}'
+            dest_pod_name: '{{ "{{ dest_pod_name }}" }}'
+            dest_pod_namespace: '{{ "{{ dest_pod_namespace }}" }}'
+
+  sinks:
+      prom_exporter:
+        type: prometheus_exporter
+        inputs: [ internal_metrics ]
+        address: 0.0.0.0:9090
+      stdout:
+        type: console
+        inputs:
+          - other_events
+          - network_events
+        encoding:
+          codec: json
+      victoria_metrics:
+        type: prometheus_remote_write
+        inputs:
+          - network_events_metrics
+        endpoint: http://metrics.poc.svc.cluster.local:8428/api/v1/write
+        default_namespace: tetragon
+        healthcheck:
+          enabled: true

@@ -1,0 +1,9 @@
+server:
+  enabled: true
+  statefulSet:
+    enabled: true
+  fullnameOverride: "metrics"
+  retentionPeriod: 24h
+  persistentVolume:
+    enabled: true
+    size: 16Gi

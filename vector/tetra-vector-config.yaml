@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tetragon-vector-config
+data:
+  vector-config.yaml: |
+    sources:
+      tetragon_logs:
+        type: file
+        ignore_older_secs: 600
+        include:
+          - /var/run/cilium/tetragon/tetragon.log
+        read_from: end
+        
+    transforms:
+      events:
+        type: remap
+        inputs:
+          - tetragon_logs
+        source: |-
+          . = parse_json!(string!(.message))
+
+      other_events:
+        type: filter
+        inputs:
+          - events
+        condition:
+          type: "vrl"
+          source: |-
+            !exists(.process_kprobe.args[0].sock_arg)
+  
+      network_events:
+        type: filter
+        inputs:
+          - events
+        condition:
+          type: "vrl"
+          source: |-
+            .process_kprobe.function_name == "tcp_sendmsg"
+  
+      remapped_network_events:
+        type: remap
+        inputs:
+          - network_events
+        source: |-
+          sock = .process_kprobe.args[0].sock_arg
+          bytes_len = .process_kprobe.args[1].int_arg
+          proc = .process_kprobe.process
+          .pid = proc.pid
+          .saddr = sock.saddr
+          .daddr = sock.daddr
+          .sport = sock.sport
+          .dport = sock.dport
+          .pod_name = proc.pod.name
+          .pod_namespace = proc.pod.namespace
+          .dest_pod_name = proc.dest_pod.name
+          .dest_pod_namespace = proc.dest_pod.namespace
+          .bytes = bytes_len
+          del(.process_kprobe)
+          del(.time)
+  
+      reduced_network_events:
+        type: reduce
+        inputs:
+          - remapped_network_events
+        group_by:
+          - pid
+          - saddr
+          - daddr
+          - sport
+          - dport
+        merge_strategies:
+          pid: discard
+          saddr: discard
+          daddr: discard
+          sport: discard
+          dport: discard
+          bytes: sum
+        expire_after_ms: 3000
+    sinks:
+      vector_aggregator:
+        type: vector
+        inputs:
+          - other_events
+          - reduced_network_events
+        address: vector.poc.svc.cluster.local:6000

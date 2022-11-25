@@ -1,0 +1,17 @@
+. = parse_json!(string!(.message))
+if exists(.process_kprobe.args[0].sock_arg) {
+    sock = .process_kprobe.args[0].sock_arg
+	bytes_len = .process_kprobe.args[1].int_arg
+    proc = .process_kprobe.process
+    .pid = proc.pid
+    .saddr = sock.saddr
+    .daddr = sock.daddr
+    .sport = sock.sport
+    .dport = sock.dport
+    .pod_name = proc.pod.name
+    .pod_namespace = proc.pod.namespace
+    .dest_pod_name = proc.dest_pod.name
+    .dest_pod_namespace = proc.dest_pod.namespace
+    .bytes = bytes_len
+    del(.process_kprobe)
+}

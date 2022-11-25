@@ -1,0 +1,35 @@
+# https://github.com/cilium/tetragon/blob/main/install/kubernetes/values.yaml
+podAnnotations:
+  phlare.grafana.com/scrape: "true"
+  phlare.grafana.com/port: "6060"
+
+tetragon:
+  image:
+    repository: "ghcr.io/anjmao/tetragon"
+    tag: "dev"
+  extraArgs:
+    pprof-addr: ":6060"
+
+  exportFilename: tetragon.log
+
+dnsPolicy: "ClusterFirstWithHostNet"
+exportDirectory: "/var/run/cilium/tetragon"
+export:
+  stdout:
+    enabledCommand: true
+    enabledArgs: true
+    commandOverride: ["vector"]
+    argsOverride: ["--config", "/vector/vector-config.yaml"]
+    extraVolumeMounts:
+      - name: tetragon-vector-config
+        mountPath: /vector
+        readOnly: true
+    image:
+      override: timberio/vector:0.25.1-alpine
+extraVolumes:
+  - name: tetragon-vector-config
+    configMap:
+      name: tetragon-vector-config
+      items:
+        - key: "vector-config.yaml"
+          path: "vector-config.yaml"
