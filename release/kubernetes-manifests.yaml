@@ -237,6 +237,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
+  replicas: 3
   template:
     metadata:
       labels:
@@ -306,10 +307,9 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 64Mi
+              memory: 256Mi
             limits:
-              cpu: 200m
-              memory: 128Mi
+              memory: 256Mi
 ---
 apiVersion: v1
 kind: Service
@@ -542,7 +542,7 @@ spec:
   selector:
     matchLabels:
       app: loadgenerator
-  replicas: 1
+  replicas: 10
   template:
     metadata:
       labels:
@@ -595,13 +595,12 @@ spec:
         - name: FRONTEND_ADDR
           value: "frontend:80"
         - name: USERS
-          value: "10"
+          value: "1000"
         resources:
           requests:
-            cpu: 300m
+            cpu: 100m
             memory: 256Mi
           limits:
-            cpu: 500m
             memory: 512Mi
 ---
 apiVersion: apps/v1

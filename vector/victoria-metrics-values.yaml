@@ -7,3 +7,5 @@ server:
   persistentVolume:
     enabled: true
     size: 16Gi
+  scrape:
+    enabled: true

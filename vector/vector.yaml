@@ -67,6 +67,18 @@ customConfig:
           - network_events
         encoding:
           codec: json
+      loki:
+        type: loki
+        inputs:
+          - network_events
+        endpoint: "http://loki-write.poc.svc.cluster.local:3100"
+        compression: "snappy"
+        encoding:
+          codec: json
+        labels:
+          forwarder: vector
+        batch:
+          timeout_secs: 3
       victoria_metrics:
         type: prometheus_remote_write
         inputs:
