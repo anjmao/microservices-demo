@@ -3,6 +3,10 @@ role: Aggregator
 
 terminationGracePeriodSeconds: 3
 
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "9090"
+
 customConfig:
   data_dir: /vector-data-dir
   api:
@@ -25,7 +29,7 @@ customConfig:
       condition:
         type: "vrl"
         source: |-
-          !exists(.sport)
+          !exists(.saddr)
 
     network_events:
       type: filter
@@ -34,7 +38,7 @@ customConfig:
       condition:
         type: "vrl"
         source: |-
-          exists(.sport)
+          exists(.saddr)
 
     network_events_metrics:
       type: log_to_metric

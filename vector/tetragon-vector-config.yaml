@@ -5,12 +5,14 @@ metadata:
 data:
   vector-config.yaml: |
     sources:
+      internal_metrics:
+        type: internal_metrics
       tetragon_logs:
         type: file
         ignore_older_secs: 600
         include:
           - /var/run/cilium/tetragon/tetragon.log
-        read_from: end
+        read_from: beginning
         
     transforms:
       events:
@@ -57,7 +59,6 @@ data:
           .dest_pod_namespace = proc.dest_pod.namespace
           .bytes = bytes_len
           del(.process_kprobe)
-          del(.time)
   
       reduced_network_events:
         type: reduce
@@ -67,17 +68,19 @@ data:
           - pid
           - saddr
           - daddr
-          - sport
-          - dport
         merge_strategies:
           pid: discard
           saddr: discard
           daddr: discard
-          sport: discard
-          dport: discard
+          sport: flat_unique
+          dport: flat_unique
           bytes: sum
         expire_after_ms: 3000
     sinks:
+      prom_exporter:
+        type: prometheus_exporter
+        inputs: [ internal_metrics ]
+        address: 0.0.0.0:9090
       vector_aggregator:
         type: vector
         inputs:

@@ -2,6 +2,8 @@
 podAnnotations:
   phlare.grafana.com/scrape: "true"
   phlare.grafana.com/port: "6060"
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "2112"
 
 tetragon:
   image:
@@ -9,8 +11,19 @@ tetragon:
     tag: "dev"
   extraArgs:
     pprof-addr: ":6060"
-
+    event-queue-size: "20000"
+    log-level: "debug"
+    rb-size: "5324800"
   exportFilename: tetragon.log
+  exportFileMaxBackups: 3
+  exportFileMaxSizeMB: 20
+  resources:
+    requests:
+      cpu: 300m
+      memory: 256Mi
+
+  fieldFilters: |
+     {"fields": "parent", "action": "EXCLUDE"}
 
 dnsPolicy: "ClusterFirstWithHostNet"
 exportDirectory: "/var/run/cilium/tetragon"
@@ -26,6 +39,10 @@ export:
         readOnly: true
     image:
       override: timberio/vector:0.25.1-alpine
+    resources:
+      requests:
+        cpu: 300m
+        memory: 64Mi
 extraVolumes:
   - name: tetragon-vector-config
     configMap:
