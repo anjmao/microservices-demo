@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -87,7 +87,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 9,
+        "w": 8,
         "x": 0,
         "y": 0
       },
@@ -179,8 +179,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 9,
-        "x": 9,
+        "w": 8,
+        "x": 8,
         "y": 0
       },
       "id": 11,
@@ -271,8 +271,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 18,
+        "w": 8,
+        "x": 16,
         "y": 0
       },
       "id": 13,
@@ -555,7 +555,7 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -585,7 +585,100 @@
             "uid": "PC7A11E9A55DE2B14"
           },
           "editorMode": "code",
-          "expr": "sum (rate (container_network_transmit_bytes_total{image!=\"\", namespace=~\"$namespace\", pod=~\"$pod\"}[1m])) by (pod)",
+          "expr": "sum(rate(container_network_transmit_packets_total{image!=\"\", namespace!=\"kube-system\", namespace=~\"$namespace\"}[1m])) by (instance)",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Packets count per node",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PC7A11E9A55DE2B14"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 21,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PC7A11E9A55DE2B14"
+          },
+          "editorMode": "code",
+          "expr": "sum (rate (container_network_transmit_bytes_total{image!=\"\", namespace!=\"kube-system\", namespace=~\"$namespace\", pod=~\"$pod\"}[1m])) by (pod)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -656,7 +749,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 36
       },
       "id": 8,
       "options": {
@@ -678,7 +771,7 @@
             "uid": "PC7A11E9A55DE2B14"
           },
           "editorMode": "code",
-          "expr": "sum (rate(tetragon_network_flows{pod_name=~\"$pod\", pod_namespace=~\"$namespace\"}[1m])) by (pod_name)",
+          "expr": "sum (rate(tetragon_network_flows{pod_name=~\"$pod\", pod_namespace!=\"kube-system\", pod_namespace=~\"$namespace\"}[1m])) by (pod_name)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -732,7 +825,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -748,7 +842,7 @@
         "h": 13,
         "w": 12,
         "x": 0,
-        "y": 36
+        "y": 46
       },
       "id": 2,
       "options": {
@@ -836,7 +930,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -852,7 +947,7 @@
         "h": 13,
         "w": 12,
         "x": 12,
-        "y": 36
+        "y": 46
       },
       "id": 3,
       "options": {
@@ -940,7 +1035,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -956,7 +1052,7 @@
         "h": 13,
         "w": 12,
         "x": 0,
-        "y": 49
+        "y": 59
       },
       "id": 4,
       "options": {
@@ -1032,7 +1128,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1048,7 +1145,7 @@
         "h": 13,
         "w": 12,
         "x": 12,
-        "y": 49
+        "y": 59
       },
       "id": 5,
       "options": {
@@ -1078,6 +1175,190 @@
       ],
       "title": "Vector aggregator cpu usage",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PC7A11E9A55DE2B14"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 72
+      },
+      "id": 19,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PC7A11E9A55DE2B14"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(vector_processed_events_total{}[1m])) by (component_name)",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Vector aggregator events",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PC7A11E9A55DE2B14"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 72
+      },
+      "id": 20,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PC7A11E9A55DE2B14"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(vector_events_discarded_total{}[1m])) ",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Vector discarded events",
+      "type": "timeseries"
     }
   ],
   "schemaVersion": 37,
@@ -1099,14 +1380,14 @@
           "type": "prometheus",
           "uid": "PC7A11E9A55DE2B14"
         },
-        "definition": "label_values(container_memory_working_set_bytes{}, namespace)",
+        "definition": "label_values(container_memory_working_set_bytes{namespace!=\"kube-system\"}, namespace)",
         "hide": 0,
         "includeAll": true,
         "multi": true,
         "name": "namespace",
         "options": [],
         "query": {
-          "query": "label_values(container_memory_working_set_bytes{}, namespace)",
+          "query": "label_values(container_memory_working_set_bytes{namespace!=\"kube-system\"}, namespace)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
@@ -1153,8 +1434,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Metrics",
-  "uid": "5uVGZlO4z",
-  "version": 14,
+  "title": "Metrics Copy",
+  "uid": "zKAojZK4k",
+  "version": 3,
   "weekStart": ""
 }

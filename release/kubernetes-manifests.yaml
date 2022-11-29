@@ -211,10 +211,9 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 220Mi
+            memory: 1Gi
           limits:
-            cpu: 200m
-            memory: 450Mi
+            memory: 1Gi
 ---
 apiVersion: v1
 kind: Service
@@ -306,7 +305,7 @@ spec:
           #   value: "true"
           resources:
             requests:
-              cpu: 200m
+              cpu: 500m
               memory: 1Gi
             limits:
               memory: 1Gi
@@ -542,7 +541,7 @@ spec:
   selector:
     matchLabels:
       app: loadgenerator
-  replicas: 5
+  replicas: 4
   template:
     metadata:
       labels:
@@ -553,6 +552,17 @@ spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       restartPolicy: Always
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key:         app
+                    operator: In
+                    values:
+                      - loadgenerator
+              topologyKey: kubernetes.io/hostname
+
       securityContext:
         fsGroup: 1000
         runAsGroup: 1000
@@ -595,10 +605,10 @@ spec:
         - name: FRONTEND_ADDR
           value: "frontend:80"
         - name: USERS
-          value: "500"
+          value: "5000"
         resources:
           requests:
-            cpu: 100m
+            cpu: 200m
             memory: 256Mi
           limits:
             memory: 512Mi

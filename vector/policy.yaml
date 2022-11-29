@@ -1,0 +1,36 @@
+apiVersion: cilium.io/v1alpha1
+kind: TracingPolicy
+metadata:
+  name: connect
+spec:
+  kprobes:
+    - args:
+        - index: 0
+          returnCopy: false
+          type: sock
+      call: tcp_connect
+      return: false
+      syscall: false
+    - args:
+        - index: 0
+          returnCopy: false
+          type: sock
+      call: tcp_close
+      return: false
+      syscall: false
+    - args:
+        - index: 0
+          returnCopy: false
+          type: sock
+        - index: 2
+          returnCopy: false
+          type: int
+      call: tcp_sendmsg
+      return: false
+      syscall: false
+      selectors:
+        - matchNamespaces:
+            - namespace: Pid
+              operator: NotIn
+              values:
+                - "host_ns"

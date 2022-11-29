@@ -59,6 +59,12 @@ customConfig:
             dest_pod_name: '{{ "{{ dest_pod_name }}" }}'
             dest_pod_namespace: '{{ "{{ dest_pod_namespace }}" }}'
 
+    aggregated_network_events_metrics:
+      type: aggregate
+      inputs:
+        - network_events_metrics
+      interval_ms: 5000
+
   sinks:
       prom_exporter:
         type: prometheus_exporter
@@ -81,12 +87,14 @@ customConfig:
           codec: json
         labels:
           forwarder: vector
+          pod: '{{ "{{ pod_name }}" }}'
+          namespace: '{{ "{{ pod_namespace }}" }}'
         batch:
           timeout_secs: 3
       victoria_metrics:
         type: prometheus_remote_write
         inputs:
-          - network_events_metrics
+          - aggregated_network_events_metrics
         endpoint: http://metrics.poc.svc.cluster.local:8428/api/v1/write
         default_namespace: tetragon
         healthcheck:

@@ -12,18 +12,17 @@ tetragon:
   extraArgs:
     pprof-addr: ":6060"
     event-queue-size: "20000"
-    log-level: "debug"
+    log-level: "info"
     rb-size: "5324800"
   exportFilename: tetragon.log
   exportFileMaxBackups: 3
   exportFileMaxSizeMB: 20
+  fieldFilters: |-
+    {"event_set": ["PROCESS_KPROBE"], "fields": "parent,process.arguments,process.pod.container", "action": "EXCLUDE"}
   resources:
     requests:
       cpu: 300m
       memory: 256Mi
-
-  fieldFilters: |
-     {"fields": "parent", "action": "EXCLUDE"}
 
 dnsPolicy: "ClusterFirstWithHostNet"
 exportDirectory: "/var/run/cilium/tetragon"
