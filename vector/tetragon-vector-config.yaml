@@ -38,7 +38,7 @@ data:
         condition:
           type: "vrl"
           source: |-
-            .process_kprobe.function_name == "tcp_sendmsg"
+            exists(.process_kprobe.args[0].sock_arg)
   
       remapped_network_events:
         type: remap
@@ -46,36 +46,19 @@ data:
           - network_events
         source: |-
           sock = .process_kprobe.args[0].sock_arg
-          bytes_len = .process_kprobe.args[1].int_arg
           proc = .process_kprobe.process
           .pid = proc.pid
           .saddr = sock.saddr
           .daddr = sock.daddr
           .sport = sock.sport
           .dport = sock.dport
+          .protocol = sock.protocol
           .pod_name = proc.pod.name
           .pod_namespace = proc.pod.namespace
           .dest_pod_name = proc.dest_pod.name
           .dest_pod_namespace = proc.dest_pod.namespace
-          .bytes = bytes_len
           del(.process_kprobe)
   
-      reduced_network_events:
-        type: reduce
-        inputs:
-          - remapped_network_events
-        group_by:
-          - pid
-          - saddr
-          - daddr
-        merge_strategies:
-          pid: discard
-          saddr: discard
-          daddr: discard
-          sport: flat_unique
-          dport: flat_unique
-          bytes: sum
-        expire_after_ms: 3000
     sinks:
       prom_exporter:
         type: prometheus_exporter
@@ -84,6 +67,5 @@ data:
       vector_aggregator:
         type: vector
         inputs:
-          - other_events
-          - reduced_network_events
+          - events
         address: vector.poc.svc.cluster.local:6000

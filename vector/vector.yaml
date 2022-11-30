@@ -40,24 +40,24 @@ customConfig:
         source: |-
           exists(.saddr)
 
-    network_events_metrics:
-      type: log_to_metric
-      inputs:
-        - network_events
-      metrics:
-        - type: counter
-          field: bytes
-          name: network_flows
-          increment_by_value: true
-          tags:
-            saddr: '{{ "{{ saddr }}" }}'
-            daddr: '{{ "{{ daddr }}" }}'
-#            sport: '{{ "{{ sport }}" }}'
-#            dport: '{{ "{{ dport }}" }}'
-            pod_name: '{{ "{{ pod_name }}" }}'
-            pod_namespace: '{{ "{{ pod_namespace }}" }}'
-            dest_pod_name: '{{ "{{ dest_pod_name }}" }}'
-            dest_pod_namespace: '{{ "{{ dest_pod_namespace }}" }}'
+#    network_events_metrics:
+#      type: log_to_metric
+#      inputs:
+#        - network_events
+#      metrics:
+#        - type: counter
+#          field: bytes
+#          name: network_flows
+#          increment_by_value: true
+#          tags:
+#            saddr: '{{ "{{ saddr }}" }}'
+#            daddr: '{{ "{{ daddr }}" }}'
+##            sport: '{{ "{{ sport }}" }}'
+##            dport: '{{ "{{ dport }}" }}'
+#            pod_name: '{{ "{{ pod_name }}" }}'
+#            pod_namespace: '{{ "{{ pod_namespace }}" }}'
+#            dest_pod_name: '{{ "{{ dest_pod_name }}" }}'
+#            dest_pod_namespace: '{{ "{{ dest_pod_namespace }}" }}'
 
     aggregated_network_events_metrics:
       type: aggregate
@@ -91,11 +91,11 @@ customConfig:
           namespace: '{{ "{{ pod_namespace }}" }}'
         batch:
           timeout_secs: 3
-      victoria_metrics:
-        type: prometheus_remote_write
-        inputs:
-          - aggregated_network_events_metrics
-        endpoint: http://metrics.poc.svc.cluster.local:8428/api/v1/write
-        default_namespace: tetragon
-        healthcheck:
-          enabled: true
+#      victoria_metrics:
+#        type: prometheus_remote_write
+#        inputs:
+#          - aggregated_network_events_metrics
+#        endpoint: http://metrics.poc.svc.cluster.local:8428/api/v1/write
+#        default_namespace: tetragon
+#        healthcheck:
+#          enabled: true

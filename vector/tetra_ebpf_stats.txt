@@ -1,0 +1,426 @@
+101: cgroup_skb  tag 6deef7357e7b4530  gpl
+	loaded_at 2022-11-30T08:03:15+0000  uid 0
+	xlated 112B  jited 90B  memlock 4096B
+102: cgroup_skb  tag 6deef7357e7b4530  gpl
+	loaded_at 2022-11-30T08:03:15+0000  uid 0
+	xlated 112B  jited 92B  memlock 4096B
+103: cgroup_skb  tag 6deef7357e7b4530  gpl
+	loaded_at 2022-11-30T08:03:15+0000  uid 0
+	xlated 112B  jited 92B  memlock 4096B
+104: cgroup_skb  tag 6deef7357e7b4530  gpl
+	loaded_at 2022-11-30T08:03:15+0000  uid 0
+	xlated 112B  jited 92B  memlock 4096B
+105: cgroup_skb  tag 6deef7357e7b4530  gpl
+	loaded_at 2022-11-30T08:03:15+0000  uid 0
+	xlated 112B  jited 90B  memlock 4096B
+106: cgroup_skb  tag 6deef7357e7b4530  gpl
+	loaded_at 2022-11-30T08:03:15+0000  uid 0
+	xlated 112B  jited 92B  memlock 4096B
+962: tracepoint  name event_exit  tag b0d4f02376c55fd7  gpl run_time_ns 1209730 run_cnt 333
+	loaded_at 2022-11-30T08:04:28+0000  uid 0
+	xlated 1168B  jited 756B  memlock 4096B  map_ids 144,151,148,145
+	btf_id 126
+964: kprobe  name event_wake_up_n  tag 5a196ed3c3f5fa8d  gpl run_time_ns 1419700 run_cnt 301
+	loaded_at 2022-11-30T08:04:28+0000  uid 0
+	xlated 4296B  jited 2719B  memlock 8192B  map_ids 144,157,145,148
+	btf_id 136
+965: tracepoint  name event_execve  tag c615130626135bec  gpl run_time_ns 1561715 run_cnt 80
+	loaded_at 2022-11-30T08:04:28+0000  uid 0
+	xlated 223384B  jited 150711B  memlock 225280B  map_ids 164,144,169,148,168,147,171,149,146
+	btf_id 145
+966: tracepoint  name execve_send  tag 7ec11f0ee917c3ed  gpl
+	loaded_at 2022-11-30T08:04:29+0000  uid 0
+	xlated 1736B  jited 1144B  memlock 4096B  map_ids 164,144,167,145,148
+	btf_id 150
+969: kprobe  name generic_kprobe_  tag 2ccd3a32118fdb17  gpl
+	loaded_at 2022-11-30T08:04:31+0000  uid 0
+	xlated 41016B  jited 30120B  memlock 45056B  map_ids 179,175,144,173,172,203,174,178,177,148
+	btf_id 174
+970: kprobe  name generic_kprobe_  tag edf315f736ea2228  gpl run_time_ns 2246064 run_cnt 96
+	loaded_at 2022-11-30T08:04:31+0000  uid 0
+	xlated 2768B  jited 1970B  memlock 4096B  map_ids 179,174
+	btf_id 175
+971: kprobe  name generic_kprobe_  tag a82df8e4914d8d65  gpl
+	loaded_at 2022-11-30T08:04:31+0000  uid 0
+	xlated 207336B  jited 138106B  memlock 208896B  map_ids 179,173,172,199,178,174
+	btf_id 176
+972: kprobe  name generic_kprobe_  tag 497af89876692df0  gpl
+	loaded_at 2022-11-30T08:04:31+0000  uid 0
+	xlated 41016B  jited 30124B  memlock 45056B  map_ids 179,175,144,173,172,203,174,178,177,148
+	btf_id 177
+973: kprobe  name generic_kprobe_  tag ce364d6cfdb315f4  gpl
+	loaded_at 2022-11-30T08:04:32+0000  uid 0
+	xlated 209080B  jited 139953B  memlock 212992B  map_ids 179,173,178,199,172,174
+	btf_id 178
+974: kprobe  name generic_kprobe_  tag 739755e00ea28aef  gpl
+	loaded_at 2022-11-30T08:04:32+0000  uid 0
+	xlated 207344B  jited 138106B  memlock 208896B  map_ids 179,173,172,199,178,174
+	btf_id 179
+975: kprobe  name generic_kprobe_  tag df7f41c8a52e5635  gpl
+	loaded_at 2022-11-30T08:04:33+0000  uid 0
+	xlated 41016B  jited 30100B  memlock 45056B  map_ids 179,175,144,173,172,203,174,178,177,148
+	btf_id 180
+976: kprobe  name generic_kprobe_  tag 13f3c8054605df46  gpl
+	loaded_at 2022-11-30T08:04:33+0000  uid 0
+	xlated 207336B  jited 138092B  memlock 208896B  map_ids 179,173,172,199,178,174
+	btf_id 181
+977: kprobe  name generic_kprobe_  tag 3c195f1260c3c301  gpl
+	loaded_at 2022-11-30T08:04:33+0000  uid 0
+	xlated 27232B  jited 18052B  memlock 28672B  map_ids 179,144,175,174
+	btf_id 182
+978: kprobe  name generic_kprobe_  tag 10101781cd53cd94  gpl
+	loaded_at 2022-11-30T08:04:33+0000  uid 0
+	xlated 41016B  jited 30113B  memlock 45056B  map_ids 179,175,144,173,172,203,174,178,177,148
+	btf_id 183
+979: kprobe  name generic_kprobe_  tag 4645b0a493916fbc  gpl
+	loaded_at 2022-11-30T08:04:34+0000  uid 0
+	xlated 207344B  jited 138154B  memlock 208896B  map_ids 179,173,172,199,178,174
+	btf_id 184
+980: kprobe  name generic_kprobe_  tag a4b05321ac3df867  gpl
+	loaded_at 2022-11-30T08:04:34+0000  uid 0
+	xlated 41016B  jited 30124B  memlock 45056B  map_ids 179,175,144,173,172,203,174,178,177,148
+	btf_id 185
+981: kprobe  name generic_kprobe_  tag edf315f736ea2228  gpl run_time_ns 1766159 run_cnt 96
+	loaded_at 2022-11-30T08:04:34+0000  uid 0
+	xlated 2768B  jited 1968B  memlock 4096B  map_ids 186,181
+	btf_id 197
+982: kprobe  name generic_kprobe_  tag df7f41c8a52e5635  gpl
+	loaded_at 2022-11-30T08:04:35+0000  uid 0
+	xlated 41016B  jited 30115B  memlock 45056B  map_ids 186,182,144,180,172,215,181,185,184,148
+	btf_id 198
+983: kprobe  name generic_kprobe_  tag ce364d6cfdb315f4  gpl
+	loaded_at 2022-11-30T08:04:35+0000  uid 0
+	xlated 209080B  jited 139917B  memlock 212992B  map_ids 186,180,185,210,172,181
+	btf_id 199
+984: kprobe  name generic_kprobe_  tag 3c195f1260c3c301  gpl
+	loaded_at 2022-11-30T08:04:35+0000  uid 0
+	xlated 27232B  jited 18072B  memlock 28672B  map_ids 186,144,182,181
+	btf_id 200
+985: kprobe  name generic_kprobe_  tag 497af89876692df0  gpl
+	loaded_at 2022-11-30T08:04:35+0000  uid 0
+	xlated 41016B  jited 30133B  memlock 45056B  map_ids 186,182,144,180,172,215,181,185,184,148
+	btf_id 201
+986: kprobe  name generic_kprobe_  tag 10101781cd53cd94  gpl
+	loaded_at 2022-11-30T08:04:36+0000  uid 0
+	xlated 41016B  jited 30138B  memlock 45056B  map_ids 186,182,144,180,172,215,181,185,184,148
+	btf_id 202
+987: kprobe  name generic_kprobe_  tag a4b05321ac3df867  gpl
+	loaded_at 2022-11-30T08:04:36+0000  uid 0
+	xlated 41016B  jited 30119B  memlock 45056B  map_ids 186,182,144,180,172,215,181,185,184,148
+	btf_id 203
+988: kprobe  name generic_kprobe_  tag 2ccd3a32118fdb17  gpl
+	loaded_at 2022-11-30T08:04:36+0000  uid 0
+	xlated 41016B  jited 30134B  memlock 45056B  map_ids 186,182,144,180,172,215,181,185,184,148
+	btf_id 204
+989: kprobe  name generic_kprobe_  tag 13f3c8054605df46  gpl
+	loaded_at 2022-11-30T08:04:36+0000  uid 0
+	xlated 207336B  jited 138126B  memlock 208896B  map_ids 186,180,172,210,185,181
+	btf_id 205
+990: kprobe  name generic_kprobe_  tag a82df8e4914d8d65  gpl
+	loaded_at 2022-11-30T08:04:37+0000  uid 0
+	xlated 207336B  jited 138128B  memlock 208896B  map_ids 186,180,172,210,185,181
+	btf_id 206
+991: kprobe  name generic_kprobe_  tag 4645b0a493916fbc  gpl
+	loaded_at 2022-11-30T08:04:37+0000  uid 0
+	xlated 207344B  jited 138130B  memlock 208896B  map_ids 186,180,172,210,185,181
+	btf_id 207
+992: kprobe  name generic_kprobe_  tag 739755e00ea28aef  gpl
+	loaded_at 2022-11-30T08:04:38+0000  uid 0
+	xlated 207344B  jited 138141B  memlock 208896B  map_ids 186,180,172,210,185,181
+	btf_id 208
+993: kprobe  name generic_kprobe_  tag edf315f736ea2228  gpl run_time_ns 2265197357 run_cnt 211384
+	loaded_at 2022-11-30T08:04:38+0000  uid 0
+	xlated 2768B  jited 1973B  memlock 4096B  map_ids 193,188
+	btf_id 220
+994: kprobe  name generic_kprobe_  tag 3c195f1260c3c301  gpl
+	loaded_at 2022-11-30T08:04:38+0000  uid 0
+	xlated 27232B  jited 18072B  memlock 28672B  map_ids 193,144,189,188
+	btf_id 221
+995: kprobe  name generic_kprobe_  tag ce364d6cfdb315f4  gpl
+	loaded_at 2022-11-30T08:04:39+0000  uid 0
+	xlated 209080B  jited 139973B  memlock 212992B  map_ids 193,187,192,226,172,188
+	btf_id 222
+996: kprobe  name generic_kprobe_  tag 739755e00ea28aef  gpl
+	loaded_at 2022-11-30T08:04:39+0000  uid 0
+	xlated 207344B  jited 138110B  memlock 208896B  map_ids 193,187,172,226,192,188
+	btf_id 223
+997: kprobe  name generic_kprobe_  tag 497af89876692df0  gpl
+	loaded_at 2022-11-30T08:04:40+0000  uid 0
+	xlated 41016B  jited 30141B  memlock 45056B  map_ids 193,189,144,187,172,216,188,192,191,148
+	btf_id 224
+998: kprobe  name generic_kprobe_  tag df7f41c8a52e5635  gpl
+	loaded_at 2022-11-30T08:04:40+0000  uid 0
+	xlated 41016B  jited 30122B  memlock 45056B  map_ids 193,189,144,187,172,216,188,192,191,148
+	btf_id 225
+999: kprobe  name generic_kprobe_  tag 13f3c8054605df46  gpl
+	loaded_at 2022-11-30T08:04:40+0000  uid 0
+	xlated 207336B  jited 138114B  memlock 208896B  map_ids 193,187,172,226,192,188
+	btf_id 226
+1000: kprobe  name generic_kprobe_  tag 4645b0a493916fbc  gpl
+	loaded_at 2022-11-30T08:04:41+0000  uid 0
+	xlated 207344B  jited 138098B  memlock 208896B  map_ids 193,187,172,226,192,188
+	btf_id 227
+1001: kprobe  name generic_kprobe_  tag 10101781cd53cd94  gpl
+	loaded_at 2022-11-30T08:04:41+0000  uid 0
+	xlated 41016B  jited 30127B  memlock 45056B  map_ids 193,189,144,187,172,216,188,192,191,148
+	btf_id 228
+1002: kprobe  name generic_kprobe_  tag a4b05321ac3df867  gpl
+	loaded_at 2022-11-30T08:04:41+0000  uid 0
+	xlated 41016B  jited 30110B  memlock 45056B  map_ids 193,189,144,187,172,216,188,192,191,148
+	btf_id 229
+1003: kprobe  name generic_kprobe_  tag 2ccd3a32118fdb17  gpl
+	loaded_at 2022-11-30T08:04:42+0000  uid 0
+	xlated 41016B  jited 30114B  memlock 45056B  map_ids 193,189,144,187,172,216,188,192,191,148
+	btf_id 230
+1004: kprobe  name generic_kprobe_  tag a82df8e4914d8d65  gpl
+	loaded_at 2022-11-30T08:04:42+0000  uid 0
+	xlated 207336B  jited 138130B  memlock 208896B  map_ids 193,187,172,226,192,188
+	btf_id 231
+1713: cgroup_sock_addr  name sock6_connect  tag ae49183ac7e59edb  gpl run_time_ns 9419 run_cnt 14
+	loaded_at 2022-11-30T08:13:48+0000  uid 0
+	xlated 8384B  jited 5383B  memlock 12288B  map_ids 93,314,105,104,94,91,92
+	btf_id 245
+1717: cgroup_sock_addr  name sock6_getpeerna  tag b289eb46ffdc0c7e  gpl run_time_ns 473439 run_cnt 213
+	loaded_at 2022-11-30T08:13:48+0000  uid 0
+	xlated 4136B  jited 2704B  memlock 8192B  map_ids 92,93,314,91
+	btf_id 250
+1721: cgroup_sock  name sock6_post_bind  tag fe75db68df202de5  gpl
+	loaded_at 2022-11-30T08:13:49+0000  uid 0
+	xlated 2696B  jited 1806B  memlock 4096B  map_ids 314,93
+	btf_id 255
+1725: cgroup_sock_addr  name sock6_sendmsg  tag c3cc7411f7db11bc  gpl
+	loaded_at 2022-11-30T08:13:49+0000  uid 0
+	xlated 8216B  jited 5265B  memlock 12288B  map_ids 93,314,105,104,94,91,92
+	btf_id 260
+1729: cgroup_sock_addr  name sock6_recvmsg  tag b289eb46ffdc0c7e  gpl
+	loaded_at 2022-11-30T08:13:50+0000  uid 0
+	xlated 4136B  jited 2709B  memlock 8192B  map_ids 92,93,314,91
+	btf_id 265
+1733: cgroup_sock_addr  name sock4_connect  tag c2d006c073026093  gpl run_time_ns 6373088 run_cnt 4713
+	loaded_at 2022-11-30T08:13:51+0000  uid 0
+	xlated 7968B  jited 5135B  memlock 8192B  map_ids 93,314,105,104,94,91,92
+	btf_id 270
+1737: cgroup_sock_addr  name sock4_getpeerna  tag b3d73c9e5743a6d0  gpl run_time_ns 7665533 run_cnt 4620
+	loaded_at 2022-11-30T08:13:51+0000  uid 0
+	xlated 3760B  jited 2498B  memlock 4096B  map_ids 92,93,314,91
+	btf_id 275
+1741: cgroup_sock  name sock4_post_bind  tag 4f01597435647044  gpl
+	loaded_at 2022-11-30T08:13:52+0000  uid 0
+	xlated 1808B  jited 1231B  memlock 4096B  map_ids 93,314
+	btf_id 280
+1745: cgroup_sock_addr  name sock4_sendmsg  tag 58bfd36b1946a959  gpl
+	loaded_at 2022-11-30T08:13:52+0000  uid 0
+	xlated 7848B  jited 5057B  memlock 8192B  map_ids 93,314,105,104,94,91,92
+	btf_id 285
+1749: cgroup_sock_addr  name sock4_recvmsg  tag b3d73c9e5743a6d0  gpl run_time_ns 111984 run_cnt 53
+	loaded_at 2022-11-30T08:13:53+0000  uid 0
+	xlated 3760B  jited 2505B  memlock 4096B  map_ids 92,93,314,91
+	btf_id 290
+1769: sched_cls  name handle_xgress  tag eb552782562b40b4  gpl run_time_ns 1987528 run_cnt 286
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 1176B  jited 882B  memlock 4096B  map_ids 141,91
+	btf_id 300
+1771: sched_cls  name handle_xgress  tag 84398405e74f1db0  gpl run_time_ns 174709649 run_cnt 19996
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 1176B  jited 880B  memlock 4096B  map_ids 139,91
+	btf_id 295
+1779: sched_cls  name __send_drop_not  tag 161ffdc3ba6ed953  gpl
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 536B  jited 324B  memlock 4096B  map_ids 96
+	btf_id 310
+1781: sched_cls  name handle_xgress  tag ff89e2596c8027e6  gpl run_time_ns 467028 run_cnt 49
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 1176B  jited 883B  memlock 4096B  map_ids 140,91
+	btf_id 305
+1785: sched_cls  name __send_drop_not  tag 8f4761680f04a149  gpl
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 536B  jited 322B  memlock 4096B  map_ids 96
+	btf_id 315
+1791: sched_cls  name __send_drop_not  tag 48eafce29598739e  gpl
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 536B  jited 324B  memlock 4096B  map_ids 96
+	btf_id 320
+1792: sched_cls  name tail_nodeport_n  tag 18931ec63fc58c67  gpl
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 139136B  jited 98154B  memlock 139264B  map_ids 101,99,100,91,103,97,141
+	btf_id 310
+1793: sched_cls  name tail_rev_nodepo  tag 462f59da9473ada8  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 15336B  jited 10174B  memlock 16384B  map_ids 103,91,99,100,95,141,102
+	btf_id 310
+1794: sched_cls  name tail_nodeport_n  tag 18931ec63fc58c67  gpl
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 139136B  jited 98121B  memlock 139264B  map_ids 101,99,100,91,103,97,139
+	btf_id 315
+1795: sched_cls  name tail_rev_nodepo  tag 462f59da9473ada8  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 15336B  jited 10173B  memlock 16384B  map_ids 103,91,99,100,95,139,102
+	btf_id 315
+1796: sched_cls  name tail_handle_ipv  tag 3589109f44ebbbd3  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 43280B  jited 28909B  memlock 45056B  map_ids 91,103,93,99,100,314,133,105,104,94,97,96,141,95,88,98
+	btf_id 310
+1797: sched_cls  name tail_nodeport_n  tag 18931ec63fc58c67  gpl
+	loaded_at 2022-11-30T08:14:02+0000  uid 0
+	xlated 139136B  jited 98122B  memlock 139264B  map_ids 101,99,100,91,103,97,140
+	btf_id 320
+1798: sched_cls  name tail_ipv4_to_en  tag 6481efecfaf8df4e  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 23544B  jited 15379B  memlock 24576B  map_ids 314,91,99,103,100,96,95,133,97,141
+	btf_id 310
+1799: sched_cls  name tail_rev_nodepo  tag 462f59da9473ada8  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 15336B  jited 10175B  memlock 16384B  map_ids 103,91,99,100,95,140,102
+	btf_id 320
+1800: sched_cls  name handle_policy  tag 6a05a4ff8f9b1c4f  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 22616B  jited 14797B  memlock 24576B  map_ids 99,103,91,141,100,95,96,133,97
+	btf_id 310
+1801: sched_cls  name handle_to_conta  tag e7b6d0a07cbe3eb3  gpl run_time_ns 1860593 run_cnt 301
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 1896B  jited 1350B  memlock 4096B  map_ids 96,141,91
+	btf_id 310
+1802: sched_cls  name tail_handle_ipv  tag c4becadc073363a2  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 43280B  jited 28914B  memlock 45056B  map_ids 91,103,93,99,100,314,134,105,104,94,97,96,139,95,88,98
+	btf_id 315
+1803: sched_cls  name tail_ipv4_to_en  tag e6532b772d06d256  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 23544B  jited 15380B  memlock 24576B  map_ids 314,91,99,103,100,96,95,134,97,139
+	btf_id 315
+1804: sched_cls  name handle_policy  tag 99fad62216cf5343  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 22616B  jited 14804B  memlock 24576B  map_ids 99,103,91,139,100,95,96,134,97
+	btf_id 315
+1805: sched_cls  name handle_to_conta  tag f4b9fd7f88d7df6e  gpl run_time_ns 134854458 run_cnt 23472
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 1896B  jited 1347B  memlock 4096B  map_ids 96,139,91
+	btf_id 315
+1806: sched_cls  name tail_handle_ipv  tag cbf0e55342faa59d  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 43280B  jited 28905B  memlock 45056B  map_ids 91,103,93,99,100,314,132,105,104,94,97,96,140,95,88,98
+	btf_id 320
+1807: sched_cls  name tail_ipv4_to_en  tag 28cf896756eb0e97  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 23544B  jited 15406B  memlock 24576B  map_ids 314,91,99,103,100,96,95,132,97,140
+	btf_id 320
+1808: sched_cls  name handle_policy  tag d30e70aecbea6170  gpl
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 22616B  jited 14785B  memlock 24576B  map_ids 99,103,91,140,100,95,96,132,97
+	btf_id 320
+1809: sched_cls  name handle_to_conta  tag 110952bd167bc8f8  gpl run_time_ns 478144 run_cnt 59
+	loaded_at 2022-11-30T08:14:03+0000  uid 0
+	xlated 1896B  jited 1345B  memlock 4096B  map_ids 96,140,91
+	btf_id 320
+1818: sched_cls  name to_host  tag 6b89d4d09c799b6f  gpl
+	loaded_at 2022-11-30T08:14:04+0000  uid 0
+	xlated 768B  jited 480B  memlock 4096B  map_ids 91
+	btf_id 325
+1822: sched_cls  name __send_drop_not  tag a930db069b9e1e43  gpl
+	loaded_at 2022-11-30T08:14:04+0000  uid 0
+	xlated 504B  jited 304B  memlock 4096B  map_ids 96
+	btf_id 330
+1823: sched_cls  name tail_nodeport_n  tag 18931ec63fc58c67  gpl
+	loaded_at 2022-11-30T08:14:04+0000  uid 0
+	xlated 139136B  jited 98132B  memlock 139264B  map_ids 101,99,100,91,103,97,136
+	btf_id 330
+1824: sched_cls  name tail_rev_nodepo  tag 462f59da9473ada8  gpl
+	loaded_at 2022-11-30T08:14:04+0000  uid 0
+	xlated 15336B  jited 10179B  memlock 16384B  map_ids 103,91,99,100,95,136,102
+	btf_id 330
+1825: sched_cls  name tail_handle_ipv  tag 2834efa211cf3f68  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 3472B  jited 2415B  memlock 4096B  map_ids 91,136,88,98,314
+	btf_id 330
+1826: sched_cls  name tail_handle_ipv  tag c157b4989facb518  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 33672B  jited 22565B  memlock 36864B  map_ids 91,103,93,136,106,99,100,105,104,94,97,88,102
+	btf_id 330
+1827: sched_cls  name from_host  tag 3c7afa96653a8fc4  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 2360B  jited 1625B  memlock 4096B  map_ids 91,314,136
+	btf_id 330
+1831: sched_cls  name __send_drop_not  tag a930db069b9e1e43  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 504B  jited 301B  memlock 4096B  map_ids 96
+	btf_id 335
+1832: sched_cls  name tail_nodeport_n  tag 18931ec63fc58c67  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 139136B  jited 98169B  memlock 139264B  map_ids 101,99,100,91,103,97,137
+	btf_id 335
+1833: sched_cls  name tail_rev_nodepo  tag 462f59da9473ada8  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 15336B  jited 10178B  memlock 16384B  map_ids 103,91,99,100,95,137,102
+	btf_id 335
+1834: sched_cls  name tail_handle_ipv  tag 2834efa211cf3f68  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 3472B  jited 2413B  memlock 4096B  map_ids 91,137,88,98,314
+	btf_id 335
+1835: sched_cls  name tail_handle_ipv  tag 928e1eac03786c34  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 33672B  jited 22567B  memlock 36864B  map_ids 91,103,93,137,106,99,100,105,104,94,97,88,102
+	btf_id 335
+1836: sched_cls  name to_host  tag 6b89d4d09c799b6f  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 768B  jited 481B  memlock 4096B  map_ids 91
+	btf_id 335
+1845: sched_cls  name from_netdev  tag 12c2743c2607c352  gpl run_time_ns 589222086 run_cnt 221223
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 3176B  jited 2230B  memlock 4096B  map_ids 91,138,314
+	btf_id 340
+1849: sched_cls  name __send_drop_not  tag a930db069b9e1e43  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 504B  jited 303B  memlock 4096B  map_ids 96
+	btf_id 345
+1850: sched_cls  name tail_nodeport_n  tag 18931ec63fc58c67  gpl
+	loaded_at 2022-11-30T08:14:05+0000  uid 0
+	xlated 139136B  jited 98136B  memlock 139264B  map_ids 101,99,100,91,103,97,138
+	btf_id 345
+1851: sched_cls  name tail_rev_nodepo  tag 462f59da9473ada8  gpl
+	loaded_at 2022-11-30T08:14:06+0000  uid 0
+	xlated 15336B  jited 10172B  memlock 16384B  map_ids 103,91,99,100,95,138,102
+	btf_id 345
+1852: sched_cls  name tail_handle_ipv  tag 2834efa211cf3f68  gpl
+	loaded_at 2022-11-30T08:14:06+0000  uid 0
+	xlated 3472B  jited 2418B  memlock 4096B  map_ids 91,138,88,98,314
+	btf_id 345
+1853: sched_cls  name tail_handle_ipv  tag 359a9f706cd403fe  gpl
+	loaded_at 2022-11-30T08:14:06+0000  uid 0
+	xlated 33672B  jited 22565B  memlock 36864B  map_ids 91,103,93,138,106,99,100,105,104,94,97,88,102
+	btf_id 345
+1854: sched_cls  name to_netdev  tag 639db0bedd432934  gpl run_time_ns 327486519 run_cnt 263119
+	loaded_at 2022-11-30T08:14:06+0000  uid 0
+	xlated 140368B  jited 98911B  memlock 143360B  map_ids 91,88,314,99,100,138,101,103,97
+	btf_id 345
+1866: sched_cls  name handle_xgress  tag c557396cf1bb8bae  gpl run_time_ns 1193297578 run_cnt 257135
+	loaded_at 2022-11-30T08:14:42+0000  uid 0
+	xlated 1176B  jited 884B  memlock 4096B  map_ids 341,91
+	btf_id 350
+1874: sched_cls  name __send_drop_not  tag bb060407ce8ff0c7  gpl
+	loaded_at 2022-11-30T08:14:42+0000  uid 0
+	xlated 536B  jited 325B  memlock 4096B  map_ids 96
+	btf_id 360
+1883: sched_cls  name tail_nodeport_n  tag 18931ec63fc58c67  gpl
+	loaded_at 2022-11-30T08:14:42+0000  uid 0
+	xlated 139136B  jited 98163B  memlock 139264B  map_ids 101,99,100,91,103,97,341
+	btf_id 360
+1884: sched_cls  name tail_rev_nodepo  tag 462f59da9473ada8  gpl
+	loaded_at 2022-11-30T08:14:43+0000  uid 0
+	xlated 15336B  jited 10172B  memlock 16384B  map_ids 103,91,99,100,95,341,102
+	btf_id 360
+1885: sched_cls  name tail_handle_ipv  tag 0061a0ca905e631f  gpl
+	loaded_at 2022-11-30T08:14:43+0000  uid 0
+	xlated 43280B  jited 28918B  memlock 45056B  map_ids 91,103,93,99,100,314,340,105,104,94,97,96,341,95,88,98
+	btf_id 360
+1886: sched_cls  name tail_ipv4_to_en  tag fb4c628e51d19e0d  gpl
+	loaded_at 2022-11-30T08:14:43+0000  uid 0
+	xlated 23544B  jited 15379B  memlock 24576B  map_ids 314,91,99,103,100,96,95,340,97,341
+	btf_id 360
+1887: sched_cls  name handle_policy  tag 390537bf94df2c5c  gpl
+	loaded_at 2022-11-30T08:14:43+0000  uid 0
+	xlated 22616B  jited 14777B  memlock 24576B  map_ids 99,103,91,341,100,95,96,340,97
+	btf_id 360
+1888: sched_cls  name handle_to_conta  tag 096600c502c7fd56  gpl run_time_ns 791977344 run_cnt 211654
+	loaded_at 2022-11-30T08:14:43+0000  uid 0
+	xlated 1896B  jited 1344B  memlock 4096B  map_ids 96,341,91
+	btf_id 360

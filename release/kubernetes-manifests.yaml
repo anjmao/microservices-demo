@@ -89,6 +89,7 @@ kind: Deployment
 metadata:
   name: checkoutservice
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: checkoutservice
@@ -140,11 +141,10 @@ spec:
             value: "1"
           resources:
             requests:
-              cpu: 100m
-              memory: 64Mi
+              cpu: 500m
+              memory: 512Mi
             limits:
-              cpu: 200m
-              memory: 128Mi
+              memory: 512Mi
 ---
 apiVersion: v1
 kind: Service
@@ -164,6 +164,7 @@ kind: Deployment
 metadata:
   name: recommendationservice
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: recommendationservice
@@ -210,7 +211,7 @@ spec:
           value: "1"
         resources:
           requests:
-            cpu: 100m
+            cpu: 1000m
             memory: 1Gi
           limits:
             memory: 1Gi
@@ -386,7 +387,6 @@ spec:
             cpu: 100m
             memory: 64Mi
           limits:
-            cpu: 200m
             memory: 128Mi
 ---
 apiVersion: v1
@@ -452,7 +452,6 @@ spec:
             cpu: 100m
             memory: 64Mi
           limits:
-            cpu: 200m
             memory: 128Mi
 ---
 apiVersion: v1
@@ -508,7 +507,6 @@ spec:
             cpu: 200m
             memory: 64Mi
           limits:
-            cpu: 300m
             memory: 128Mi
         readinessProbe:
           initialDelaySeconds: 15
@@ -541,7 +539,7 @@ spec:
   selector:
     matchLabels:
       app: loadgenerator
-  replicas: 4
+  replicas: 5
   template:
     metadata:
       labels:
@@ -605,7 +603,7 @@ spec:
         - name: FRONTEND_ADDR
           value: "frontend:80"
         - name: USERS
-          value: "5000"
+          value: "10000"
         resources:
           requests:
             cpu: 200m
@@ -618,6 +616,7 @@ kind: Deployment
 metadata:
   name: currencyservice
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: currencyservice
@@ -661,10 +660,10 @@ spec:
             command: ["/bin/grpc_health_probe", "-addr=:7000"]
         resources:
           requests:
-            cpu: 100m
-            memory: 256Mi
+            cpu: 200m
+            memory: 512Mi
           limits:
-            memory: 256Mi
+            memory: 512Mi
 ---
 apiVersion: v1
 kind: Service
@@ -727,7 +726,6 @@ spec:
             cpu: 100m
             memory: 64Mi
           limits:
-            cpu: 200m
             memory: 128Mi
 ---
 apiVersion: v1
@@ -787,7 +785,6 @@ spec:
         resources:
           limits:
             memory: 256Mi
-            cpu: 125m
           requests:
             cpu: 70m
             memory: 200Mi
@@ -848,7 +845,6 @@ spec:
             cpu: 200m
             memory: 180Mi
           limits:
-            cpu: 300m
             memory: 300Mi
         readinessProbe:
           initialDelaySeconds: 20
